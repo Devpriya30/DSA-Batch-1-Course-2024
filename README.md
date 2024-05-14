@@ -63,7 +63,7 @@ Dive into our live, interactive sessions where we delve deep into optimal soluti
 
 - [Recent Student Feedback](https://lnkd.in/g6KU753h)
 
-- [Past Testimonials](https://lnkd.in/gBuQGfSR) (https://www.linkedin.com/posts/aniruddha-m-agrawal_dsa-anugrahsdsacourse-learningjourney-activity-7191429624579424256-1S5J?utm_source=share&utm_medium=member_desktop)
+- [Past Testimonials](https://lnkd.in/gBuQGfSR) (https://lnkd.in/gd35jNm3) (https://www.instagram.com/reel/C66R8WJSaVQ/?igsh=MTkyb3JjaGh1ajBvMw==)
 
 
 
