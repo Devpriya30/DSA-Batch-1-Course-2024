@@ -1,6 +1,5 @@
 <h1 align="center">Hi 👋, I'm Abhash Goyal</h1>
 <h3 align="center">I am a aspiring Data Scientist</h3>
-<br>
 <h4 align="center">Ramdeobaba University, Nagpur</h4>
 
 
