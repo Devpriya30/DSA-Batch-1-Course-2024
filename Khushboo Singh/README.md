@@ -1,4 +1,4 @@
-Hello! I'm khushboo singh, currently pursuing B.tech in computer science with DA(data analytics).
+Hello! I'm khushboo singh, currently pursuing B.tech in computer science with specialization in DA(Data Analytics).
 
 college :- GLA UNIVERSITY
 
