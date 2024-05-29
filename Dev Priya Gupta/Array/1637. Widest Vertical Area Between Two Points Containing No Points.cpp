@@ -18,3 +18,23 @@ public:
 
 Time Complexity : O(nlog(n))
 Space Complexity : O(n)
+
+//reduced space Complexity
+class Solution {
+public:
+    int maxWidthOfVerticalArea(vector<vector<int>>& points) {
+        int n=points.size();
+        sort(points.begin(),points.end());
+        int max=0;
+        for(int i=0;i<n-1;i++)
+        {
+            int c=points[i+1][0]-points[i][0];
+            if(max<c)
+                max=c;
+        }
+        return max;
+    }
+};
+
+Time Complexity : O(nlog(n))
+Space Complexity : O(1)
