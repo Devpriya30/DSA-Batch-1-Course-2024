@@ -1,0 +1,21 @@
+class Solution {
+    public int countStudents(int[] students, int[] sandwiches) {
+         int[] count = new int[2]; 
+
+        for (int student : students) {
+            count[student]++;
+        }
+
+        int i = 0;
+        while (i < sandwiches.length) {
+            if (count[sandwiches[i]] == 0) {
+                break; 
+            }
+            count[sandwiches[i]]--; 
+
+            i++;
+        }
+
+        return students.length - i;
+    }
+}
