@@ -1,0 +1,23 @@
+class Solution {
+public:
+    vector<int> decompressRLElist(vector<int>& nums) {
+        vector<int> v;
+        int n = nums.size();
+ 
+        for(int i=0 ; i<n ; i=i+2)   //runs n/2
+        {
+           int freq = nums[i];
+           int val = nums[i + 1];
+
+           // total time complexity is 𝑂(𝑛) O(n), where n is the length of the decompressed list.
+                for (int j = 0; j < freq; j++) {  
+                      v.push_back(val);
+                     }
+                }
+        
+
+        return v;
+
+        
+    }
+};
