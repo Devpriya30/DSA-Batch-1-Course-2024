@@ -4,8 +4,11 @@ Hi there, **I'm Harshali Devi!**
 I'm studying Artificial Intelligence and Data Science at Pune University. I'm very interested in Data Science and Machine Learning, and I love using data to solve real-world problems.
 
 **What I Do**
+
 ->Love Coding: Always excited to learn new technologies and get better at coding.
+
 ->Aspiring Data Scientist: Working on projects that involve data analysis, machine learning, and AI.
+
 ->Open Source Fan: I like contributing to open source projects and working with the community.
 
 **Let's Connect!**
