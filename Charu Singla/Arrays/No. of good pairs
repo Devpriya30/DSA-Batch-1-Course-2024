@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int numIdenticalPairs(vector<int>& nums) {
+        int count = 0;
+        unordered_map<int,int>count_map;
+        for (int num : nums) {
+            if (count_map.find(num) != count_map.end()) {
+                count += count_map[num] ;
+            }
+            count_map[num]++;
+        }
+        return count ; 
+    }
+};
+
+// T.C. = O(n)
+// S.C. = O(n)
