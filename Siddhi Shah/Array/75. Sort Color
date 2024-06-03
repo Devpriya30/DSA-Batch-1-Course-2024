@@ -1,0 +1,61 @@
+//Method 1
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        int cr=0,cw=0,cb=0;
+        for(int i=0;i<nums.size();i++)
+        {
+            if(nums[i]==0)
+            cr++;
+            else if(nums[i]==1)
+            cw++;
+            else
+            cb++;
+        }
+        vector<int> v;
+        v.insert(v.begin(),cr,0);
+        v.insert(v.begin()+cr,cw, 1);
+        v.insert(v.begin()+cr+cw,cb,2);
+        for (auto it:v)
+        {
+            cout<<it<<" ";
+        }
+        
+        nums=v;
+    }
+};
+
+//Method 2
+class Solution {
+public:
+    void swap(vector<int>& nums, int index, int pos)
+    {
+        int temp=nums[index];
+        nums[index]=nums[pos];
+        nums[pos]=temp;
+    }
+    void sortColors(vector<int>& nums) {
+       int start,end;
+       start=0;
+       end=nums.size()-1;
+        int i=0;
+       while(i<=end)
+       {
+        if(nums[i]==2)
+        {
+           swap(nums, i, end);
+           end--;
+        }
+        else if(nums[i]==1)
+        {
+            i++;
+        }
+        else 
+        {
+            swap(nums, i, start);
+            start++;
+            i++;
+        }
+       }
+    }
+};
