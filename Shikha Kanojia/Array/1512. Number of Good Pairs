@@ -1,0 +1,53 @@
+class Solution {
+public:
+    int numIdenticalPairs(vector<int>& nums) 
+    {
+        int count = 0;
+        int n = nums.size();
+        unordered_map<int, int> mp;     
+
+        mp[nums[0]]++;
+
+        for(int i=1; i<n; i++)
+        {
+            if( mp.find(nums[i]) != mp.end() )
+            {
+                count = count + mp[nums[i]];
+            }
+            mp[nums[i]]++;
+        }
+        return count;
+    
+        
+    }
+};
+
+//APPROACH 2(better)   - Optimized -  T.C. - O(n)   S.C. - O(n)
+// Use a map<int, int> to store <value of x, no. of occurrences of x>
+// If x is previously encountered, we increment the value of 'count'
+// Then we increment the value of 'no. of occurrences of x' in the map
+
+
+
+
+
+
+// Approach 1 - Brute Force
+// Use two for loops, first one running from i = 0 to n-2 and the second one running from j = i+1 to n-1. This will take care of the condition i < j
+// Then simply increment the 'count' when nums[i] == nums[j].
+// Complexity
+// Time complexity: O(n^2)
+// Space complexity: O(1)
+//APPROACH 1  - Brute Force -  T.C. - O(n^2)   S.C. - O(1)
+        // int count = 0;
+        // int n = nums.size();
+
+        // for(int i=0; i<n-1; i++)
+        // {
+        //     for(int j=i+1; j<n; j++)
+        //     {
+        //         if(nums[i] == nums[j])
+        //             count++;
+        //     }
+        // }
+        // return count;
