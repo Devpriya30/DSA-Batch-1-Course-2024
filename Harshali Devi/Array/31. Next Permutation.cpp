@@ -18,4 +18,35 @@ public:
 };
 
 //Approach 2
+class Solution {
+public:
+    void nextPermutation(vector<int>& A) {
+        int n = A.size();
 
+        int ind = -1; //break pt
+        for(int i=n-2;i>=0;i--){
+            if(A[i]<A[i+1]){
+                ind=i;
+                break;
+            }
+        }
+
+        //If no break pt
+        if(ind==-1){
+            reverse(A.begin(),A.end());
+        }
+        else{
+            //Find next greater ele and swap
+            for(int i=n-1;i>ind;i--){
+                if(A[i]>A[ind]){
+                    swap(A[i],A[ind]);
+                    break;
+                }
+            }
+
+            //Reverse rest right of the vector
+            reverse(A.begin()+ind+1,A.end());
+        }
+
+    }
+};
