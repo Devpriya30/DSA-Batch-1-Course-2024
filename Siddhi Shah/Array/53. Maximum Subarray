@@ -1,0 +1,25 @@
+#include<math.h>
+
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+       //kadane's algo
+        int sum=0;
+        int maxsum=numeric_limits<int>::min();
+
+        for(int num: nums)
+        {
+            sum=sum+num;
+            maxsum=max(maxsum,sum);
+
+            if(sum<0)
+            {
+                sum=0;
+            }
+        }
+        return maxsum;
+    }
+};
+
+Time complexity: O(n)
+Space Complexity : O(1)
