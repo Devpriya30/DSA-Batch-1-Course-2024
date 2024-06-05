@@ -1,0 +1,19 @@
+class Solution {
+public:
+    double myPow(double x, long n) {
+         double Pow = pow(x,n);
+         if(n<0){
+             n = -n;
+             Pow=pow(x,n);
+             Pow=1.0/Pow;
+             return Pow;
+         }
+         if(n==0) {
+             return 1.0;
+         }
+        return Pow;
+    }
+};
+
+// T.C. = O(log n)
+// S.C. = O(1)
