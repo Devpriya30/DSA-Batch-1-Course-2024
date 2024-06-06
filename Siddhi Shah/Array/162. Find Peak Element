@@ -1,0 +1,67 @@
+class Solution {
+public:
+    int findPeakElement(vector<int>& nums) {
+       if(nums.size()<=3)
+       {
+        int x=0;
+        int mx=0;
+        while(x<nums.size())
+        {
+            if(nums[x]>=nums[mx])
+            mx=x;
+            x++;
+        }
+        return mx;
+       }
+        for(int i=1;i<=nums.size()-2;i++)
+        {
+            if(nums[i]>nums[i-1] && nums[i+1]<nums[i])
+                return i;
+        }
+        int x=0;
+        int mx=0;
+        while(x<nums.size())
+        {
+            if(nums[x]>=nums[mx])
+            mx=x;
+            x++;
+        }
+        return mx;
+    }
+};
+----------------------------------------------------------------------------------------
+class Solution {
+public:
+    int maxele(vector<int>& nums)
+    {
+        int mx=0;
+        for(int i=0;i<nums.size();i++)
+        {
+            if(nums[i]>nums[mx])
+                mx=i;
+        }
+        return mx;
+    }
+    int findPeakElement(vector<int>& nums) {
+        int start=0,end=nums.size()-1;
+        if(end>2){
+        while(start<=end)
+        {
+            int mid=(start+end)/2;
+            if(nums[mid]<nums[mid+1])
+            {
+                start=mid+1;;
+            }
+            else if(nums[mid]>nums[mid+1])
+            {
+               end=mid;
+            }
+            if(start==end)
+            {
+                return start;
+            }
+        }
+        }
+        return maxele(nums);
+    }
+};
