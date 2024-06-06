@@ -1,0 +1,30 @@
+class Solution {
+public:
+    int bagOfTokensScore(vector<int>& tokens, int power) {
+        int score = 0;
+        int maxscore = 0;
+        int start = 0;
+        int end = tokens.size() - 1;  
+
+        sort(tokens.begin(),tokens.end());
+
+        while ( start <= end ) {
+            if (tokens[start] <= power) {
+                power -= tokens[start];
+                score += 1;
+                start ++;
+                maxscore = max(score, maxscore);
+            }
+            else if (score >= 1) {
+                power += tokens[end];
+                score -= 1;
+                end --;
+            }
+            else break;
+        }
+        return maxscore;
+    }
+};
+
+// T.C. = O(n log n)
+// S.C. = O(log n)
