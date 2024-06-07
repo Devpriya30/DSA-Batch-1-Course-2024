@@ -1,0 +1,26 @@
+class Solution {
+public:
+    int numRescueBoats(vector<int>& people, int limit) {
+        sort(people.begin(),people.end());
+        int boat=0;
+        //map<int,int> mp;
+        int x=0, y=people.size()-1;
+            while(x<=y){
+            
+            if(people[x]+people[y]>limit)
+                {
+                    boat++;
+                    y--;
+                }
+            
+            else if(people[x]+people[y]<=limit)
+            {
+                boat++;
+                x++;
+                y--;   
+            }
+            }
+            return boat;
+        }
+    
+};

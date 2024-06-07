@@ -1,0 +1,59 @@
+class Solution {
+public:
+    
+    void print(vector<int>& nums)
+    {
+        for(auto num: nums)
+        {
+            cout<<num;
+        }
+    }
+    void reverse(vector<int>& nums, int start, int end)
+    {
+        for(int i= start, j=end;i<=j;i++,j--)
+        {
+            int t=nums[i];
+            nums[i]=nums[j];
+            nums[j]=t;
+        }
+    }
+    void nextPermutation(vector<int>& nums) {
+        bool t= false;
+        int i=nums.size()-2; 
+
+        // for finding best prefix
+            while(i >= 0 && nums[i] >= nums[i+1])
+                i--;
+
+
+            //for last special case:
+            if(i==-1)
+            {
+                sort(nums.begin(),nums.end());
+            }
+
+            //for finding immideate larger number from (i) last number of best prefix
+            else 
+            {
+                
+               int j=nums.size()-1;
+               //int mx=j;
+               while(j>i && nums[j]<=nums[i]){
+                j--;
+               }
+
+            //swap 
+                swap(nums[i],nums[j]);
+                
+                print(nums);
+            //sort remaining portion of number, don't sort best prefix    
+                reverse(nums,i+1, nums.size()-1);
+                cout<<i;
+                print(nums);
+            }
+
+    }
+};
+
+time : O(n)
+Space: O(1)
