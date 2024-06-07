@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int subarraySum(vector<int>& nums, int k) {
+    unordered_map<int,int>sumCountMap;
+     int sum = 0;
+     int subArrays = 0;
+     sumCountMap[0] = 1;
+    
+    for(int i = 0; i< nums.size(); i++) {
+        sum += nums[i];
+
+        if(sumCountMap.find(sum - k) != sumCountMap.end()) {
+            subArrays += sumCountMap[sum - k];
+        }
+        sumCountMap[sum]++;
+    }
+    return subArrays;
+    }
+};
+
+// T.C. = O(n)
+// S.C. = O(n)
