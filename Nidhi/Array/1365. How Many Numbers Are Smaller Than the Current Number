@@ -1,0 +1,21 @@
++complexity
+Class Solution {
+    public int[] smallerNumbersThanCurrent(int[] nums) {
+
+        int [] a=new int[nums.length];
+        int i,j;
+        for(i=0;i<nums.length;i++){
+            int c=0;
+            for(j=0;j<nums.length;j++){
+                if(nums[i]>nums[j] && j!=i){
+                    c=c+1;
+                    a[i]=c;
+
+                }
+            }
+        }
+        return a;
+    }
+}
+
+
