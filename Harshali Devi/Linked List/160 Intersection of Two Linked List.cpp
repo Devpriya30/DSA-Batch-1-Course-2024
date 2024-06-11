@@ -15,11 +15,11 @@
  */
 class Solution {
 public:
-    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {       
         ListNode* temp1 = headA;
         ListNode* temp2 = headB;
 
-        while(temp1!=temp2){
+        while(temp1!=temp2){            //If no intersection of temp1 and temp2 , both will become null .Therefore the loop will end!
             if(temp1!=NULL){
                 temp1=temp1->next;
             }
