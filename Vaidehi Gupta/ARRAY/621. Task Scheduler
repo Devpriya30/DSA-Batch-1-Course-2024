@@ -1,0 +1,27 @@
+class Solution {
+public:
+    int leastInterval(vector<char>& tasks, int n) {
+        int gap=0,tg=0;
+      vector<int>res(26,0);
+      for(int i=0;i<tasks.size();i++)
+      {
+        res[(int)tasks[i]-65]++;
+      }
+      sort(res.begin(),res.end());
+      gap=res[res.size()-1]-1;
+         tg=gap*n;
+      int l=res.size()-2;
+        while(l>=0&&tg>0&&res[l]!=0)
+        {
+            tg-=min(res[l],gap);
+            l--;
+        }
+        if(tg>0)
+            return (tg+tasks.size());
+        else
+            return tasks.size();
+     
+    }
+};
+time complexity:O(n)
+space complexity:O(1)
