@@ -1,0 +1,44 @@
+
+         //NOT AN OPTIMAL SOLUTION
+
+class Solution {
+public:
+    int findPeakElement(vector<int>& nums) {
+            if(nums.size()==1)
+            return 0;
+             if(nums.size()==2)
+            {
+             if(nums[0]>nums[1])
+            return 0;
+            else return 1;
+            }
+              int i=0,j=1,k=2;
+              int res=-1;
+             while(i<nums.size()-2)
+            {
+             if(nums[i]<nums[j]&&nums[j]>nums[k])
+              {
+                res=j;
+                break;
+              }
+              else
+              {
+                i++;  j++;  k++;
+              }
+        }
+         if(res==-1)
+          {
+            if(nums[0]<nums[nums.size()-1])
+            res=nums.size()-1;
+            else
+            res=0;
+          }
+             
+        return res;
+    }
+};
+
+
+
+TIME COMPLEXITY:O(N)
+SPACE COMPLEXITY:O(1)
