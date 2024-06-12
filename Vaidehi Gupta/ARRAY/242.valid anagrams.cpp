@@ -9,5 +9,5 @@ public:
         return false;
     }
 };
-time complexity:O(n)
+time complexity:O(nlogn)
 space complexity:O(1)
