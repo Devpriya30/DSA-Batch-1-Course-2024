@@ -1,0 +1,61 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+     bool isPalindrome(ListNode* head) {
+     struct ListNode *slow=head;
+     struct ListNode *fast=head;
+        int c=1;
+
+         //if only one node is present in linked list
+
+        if(slow->next==NULL)return true;
+
+          //To find the first middle node from list
+
+        while(fast->next!=NULL&&fast->next->next!=NULL){
+          slow=slow->next;
+            fast=fast->next->next;
+        }
+
+        //Reverse the list from the mid 
+
+        struct ListNode *mid=slow->next;
+        struct ListNode *prev=NULL;
+        struct ListNode *next=NULL;
+        while(mid!=NULL){
+            next=mid->next;
+            mid->next=prev;
+            prev=mid;
+            mid=next;
+        }
+     // compare the list from the above  reversed list
+         struct ListNode *head2=head;
+        while(prev!=NULL){
+            if(head2->val!=prev->val)
+            {
+                c=0;
+                break;
+            }
+            head2=head2->next;
+            prev=prev->next;
+        }
+        if(c==0)return false;// if the list is not palindrome
+        return true;
+           
+        
+        
+        
+    }
+};
+
+Time complexity:O(n)
+space complexity:O(1)
