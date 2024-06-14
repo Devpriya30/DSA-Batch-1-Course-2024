@@ -1,8 +1,4 @@
 
-
-          //   Not an optimal solution
-
-
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -10,6 +6,7 @@
  *     struct ListNode *next;
  * };
  */
+  //creation of nodes
  struct ListNode*addnode(int data)
  {
      struct ListNode*new=(struct ListNode*)malloc(sizeof(struct      ListNode));
@@ -23,34 +20,34 @@
     struct ListNode*t2=l2;
     int carry=0;
     int sum=0;
-    struct ListNode*dummy=(struct ListNode*)malloc(sizeof(struct      ListNode));
+           //for dummy node 
+    struct ListNode*dummy=(struct ListNode*)malloc(sizeof(struct ListNode));
     struct ListNode*temp=dummy;
-  while(t1!=NULL||t2!=NULL)
-  {
-   sum=carry;
-    if(t1!=NULL)
-     sum+=t1->val;
-     if(t2!=NULL)
-     sum+=t2->val;
+    while(t1!=NULL||t2!=NULL)
+    {
+         sum=carry;
+        if(t1!=NULL)
+        sum+=t1->val;
+        if(t2!=NULL)
+        sum+=t2->val;
      
-temp->next=addnode(sum%10);
-temp=temp->next;
-carry=sum/10;
-if(t1!=NULL)t1=t1->next;
-if(t2!=NULL)t2=t2->next;
+        temp->next=addnode(sum%10);
+        temp=temp->next;
+        carry=sum/10;
+        if(t1!=NULL)t1=t1->next;
+        if(t2!=NULL)t2=t2->next;
+         }       
+           //last carry remaining , creation of last node 
+            if(carry>0)
+            {
+            struct ListNode*last=(struct ListNode*)malloc(sizeof(struct ListNode));
+            last->val=carry;
+            last->next=NULL;
+            temp->next=last;
+        }
 
-
-  }
-  if(carry>0)
-  {
-     struct ListNode*last=(struct ListNode*)malloc(sizeof(struct      ListNode));
-     last->val=carry;
-     last->next=NULL;
-     temp->next=last;
-  }
-
-return dummy->next;
- }
+        return dummy->next;
+        }
 
 
 Time complexity:O(N)
