@@ -1,0 +1,67 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     struct ListNode *next;
+ * };
+ */
+struct ListNode* removeNthFromEnd(struct ListNode* head, int n) {
+                    int l=0;
+                 struct ListNode*ptr=head;
+
+                //to find the size of list
+
+                 while(ptr!=NULL)
+                    {
+                    l++;
+                     ptr=ptr->next;
+                        }
+                    if(l==1&&n==1)
+                    return NULL;
+                     int rem=l-n;
+
+                     //if last node to be deleted from list
+
+                     if(n==1)
+                     {
+                     struct ListNode*res=head;
+                     for(int i=1;i<l-1;i++)
+                         {
+                      res=res->next;
+                        }
+                     res->next=NULL;
+                    return head;
+                        }
+
+                         //to delete the first node from list
+
+                     else if(l==n)
+                        {
+                         struct ListNode*res=head;
+                         struct ListNode*newhead=head->next;
+                         free(head);
+                        return newhead;
+                        }
+                    // to delete the node other than first and last node from list
+                         else{
+                        struct ListNode*temp=head;
+                        struct ListNode*point;
+                         while(temp->next!=NULL)
+                            {
+                            rem--;
+                             if(rem==0)
+                            break;
+                             temp=temp->next;
+                                 }
+                                     point=temp->next;
+                                     temp->next=temp->next->next;
+                                     free(point);
+                                      return head;
+                                          }
+                                          }
+
+Time complexity:O(n)
+space complexity:O(1)
+
+
+    

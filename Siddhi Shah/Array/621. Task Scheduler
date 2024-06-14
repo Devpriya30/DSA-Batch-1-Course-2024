@@ -1,0 +1,58 @@
+class Solution {
+public:
+    int leastInterval(vector<char>& tasks, int n) {
+        int totalgap=0, gap=0;
+        int arr[26];
+        for(int i=0;i<tasks.size();i++)
+        {
+            int n=tasks[i];
+            //cout<<n;
+            arr[n-65]++;
+            //cout<<"\n arr["<<tasks[i]<<"] : "<<arr[n-65]<<"\n";
+        }
+        sort(arr,arr+26);
+
+        cout<<arr[25];
+        cout<<arr[24];
+        cout<<arr[23];
+        //cout<<arr[26];
+
+        int c=0;
+        gap=arr[25]-1;
+        cout<<"gap: "<<gap<<"\n";
+        totalgap=n*(arr[25]-1);
+        cout<<"totalgap: "<<totalgap<<"\n";
+        for(int j=24;j>=0;j--)
+        {
+            
+            cout<<" arr["<<j<<"] : "<<arr[j]<<"\n";
+
+            if(arr[j]==0 || totalgap<=0)
+            {
+                cout<<"Stop condition";
+                break;
+            }
+
+            if(arr[j]<=gap)
+            {
+                totalgap-=arr[j];
+                if(totalgap<0)
+                c=abs(totalgap);
+                cout<<"IF : "<<totalgap<<endl;
+                arr[j]=0;
+            }
+            else
+            {
+                totalgap-=gap;
+                if(totalgap<0)
+                c=abs(totalgap);
+                cout<<"Else : "<<totalgap<<endl;
+                arr[j]=arr[j]-gap;
+            }
+            
+        }
+        int ans=tasks.size();
+        ans=ans+totalgap;
+        return ans+c;
+    }
+};
