@@ -1,0 +1,32 @@
+class Solution {
+    public boolean isPalindrome(ListNode head) {
+         ListNode slow=head;
+         ListNode fast=head;
+         // find mid element of list
+         while(fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+         }
+         // reverse the second half list
+          ListNode ptr=slow;
+           slow=null;
+          while(ptr!=null){
+            ListNode current=ptr.next;
+            ptr.next=slow;
+            slow=ptr;
+            ptr=current;
+          }
+          //cheching of list
+          ListNode FirstHalf=head;
+          ListNode secondHalf=slow;
+          while(secondHalf!=null){
+            if(FirstHalf.val!=secondHalf.val){
+                return false;
+            }
+             secondHalf=secondHalf.next;
+             FirstHalf=FirstHalf.next;
+            }
+            return true;
+    }
+}
+// time complexity :O(n)
