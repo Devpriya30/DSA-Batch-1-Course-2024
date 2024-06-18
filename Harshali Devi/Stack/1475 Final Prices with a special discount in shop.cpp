@@ -52,3 +52,29 @@ public:
         return discount;
     }
 };
+
+//Method 3 -> Without use of extra vector
+
+class Solution {
+public:
+    vector<int> finalPrices(vector<int>& prices) {
+        
+        stack<int>st;
+
+        for(int i=prices.size()-1;i>=0;i--){
+            int temp=prices[i];
+            while(!st.empty() && st.top()>prices[i]){
+                st.pop();
+            }
+            if(st.empty()){
+                prices[i]+=0;
+            }
+            else{
+                prices[i]=prices[i]-st.top();
+            }
+            st.push(temp);
+        }
+
+        return prices;
+    }
+};
