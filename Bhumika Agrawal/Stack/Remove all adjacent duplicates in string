@@ -1,0 +1,27 @@
+class Solution {
+    public String removeDuplicates(String s) {
+       Stack<Character> stack= new Stack<>();
+       for(char str:s.toCharArray()){
+        if(stack.isEmpty()){
+            stack.push(str);
+        }
+        else{
+            if(str==stack.peek()){
+                stack.pop();
+            }
+            else{
+                stack.push(str);
+            }
+        }
+       }
+
+        StringBuilder result = new StringBuilder();
+        while (!stack.isEmpty()) {
+            result.insert(0, stack.pop());
+        }
+        
+        return result.toString();
+    }
+}
+//Time=O(n)
+//Space=O(n)
