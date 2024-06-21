@@ -1,0 +1,53 @@
+class Solution {
+public:
+    int firstMissingPositive(vector<int>& nums) {
+        //int mn=1,mx=0;
+        bool isone=false;
+        for(int i=0;i<nums.size();i++)
+        {
+            if(nums[i]==1)
+               { isone=true;
+                break;
+               }
+        }
+        if(isone==false)
+        {
+            return 1;
+        }
+
+        if(isone==true)
+        {
+            for(int i=0;i<nums.size();i++)
+            {
+                if(nums[i]<=0 || nums[i]>nums.size())
+                    nums[i]=1;
+            }
+
+            for(int i=0;i<nums.size();i++)
+            {
+                int n=abs(nums[i]);
+                if(n == nums.size())
+                {
+                    nums[0]= - abs(nums[0]);
+                    //cout<<nums[0]<<"\t";
+                }
+                else
+                {
+                    nums[n]= - abs(nums[n]);
+                    
+                }
+            }
+            //cout<<endl<<nums[0];
+
+            for(int i=1;i<nums.size();i++)
+            if(nums[i]>0)
+            return i;
+
+           
+        }
+         if(nums[0]>0)
+            return nums.size();
+        else
+            return nums.size()+1;
+    }
+};
