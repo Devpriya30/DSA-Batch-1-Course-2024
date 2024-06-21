@@ -20,9 +20,6 @@ int front;
                 s2.push(s1.top());
                 s1.pop();
             }
-            int top=s2.top();
-            s2.pop();
-            return top;
         }
         int top=s2.top();
         s2.pop();
