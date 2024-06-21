@@ -1,0 +1,36 @@
+class Solution {
+public:
+    int calPoints(vector<string>& operations) {
+        stack<string> stack;
+        for(auto opr : operations)
+        {
+            if(opr=="+")
+            {
+                int a=stoi(stack.top());
+                stack.pop();
+                int b=stoi(stack.top());
+                stack.pop();
+                int c=a+b;
+                stack.push(to_string(b));
+                stack.push(to_string(a));
+                stack.push(to_string(c));
+            }
+            else if(opr=="C")
+                stack.pop();
+            else if(opr=="D")
+                stack.push(to_string(2*stoi(stack.top())));
+            else
+                stack.push(opr);
+        }
+        int scr=0;
+
+        while(!stack.empty())
+        {
+            scr+=stoi(stack.top());
+            stack.pop();
+        }
+
+        return scr;
+    }
+
+};
