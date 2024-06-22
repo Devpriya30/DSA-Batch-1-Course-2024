@@ -33,5 +33,7 @@ lca
 124
 
 .infected binary tree
+
 .top view
+
 .bottom view
