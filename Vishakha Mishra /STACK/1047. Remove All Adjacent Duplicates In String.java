@@ -1,7 +1,6 @@
 class Solution {
     public String removeDuplicates(String s) {
         Stack<Character> stack = new Stack<>();
-        int[] res = new int[s.length()];
 
         for(char c : s.toCharArray()){
             if(!stack.isEmpty() && stack.peek()==c){
