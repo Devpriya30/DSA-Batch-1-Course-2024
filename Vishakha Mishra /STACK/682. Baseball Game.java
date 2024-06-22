@@ -29,3 +29,36 @@ class Solution {
         return score;
     }
 }
+
+
+
+
+class Solution {
+    public int calPoints(String[] operations) {
+        int index = 0;
+        int[] scores = new int[operations.length];
+        
+        for(String operation : operations){
+            if(operation.equals("+")){
+                scores[index] = scores[index-1] + scores[index-2];
+                index++;
+            }
+            else if(operation.equals("C")){
+                --index;
+            }
+            else if(operation.equals("D")){
+                scores[index] = 2 * scores[index - 1];
+                ++index;
+            }
+            else{
+                scores[index] = Integer.parseInt(operation);
+                ++index;
+            }
+        }
+        int score = 0;
+        for(int i = 0; i < index; i++){
+            score += scores[i];
+        }
+        return score;
+    }
+}
