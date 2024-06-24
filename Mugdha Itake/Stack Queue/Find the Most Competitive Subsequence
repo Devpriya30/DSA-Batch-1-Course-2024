@@ -1,0 +1,20 @@
+class Solution {
+public:
+     Solution()
+    {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    }
+    vector<int> mostCompetitive(vector<int>& nums, int k) {
+        vector<int> stack;
+        for(int i = 0; i < nums.size(); i++){
+            int remain = nums.size() - i - 1;
+            while(!stack.empty() && stack.back() > nums[i] && stack.size() + remain >= k){
+                stack.pop_back();
+            }
+            stack.push_back(nums[i]);
+        }
+        return {stack.begin(), stack.begin()+k};
+    }
+};
