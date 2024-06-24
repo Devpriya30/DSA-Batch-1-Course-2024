@@ -37,3 +37,6 @@ lca
 .top view
 
 .bottom view
+
+.create btree from inorder preorder postorder
+
