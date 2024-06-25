@@ -1,0 +1,40 @@
+//Method 1
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+       int c=1, m=0;
+       for(int i=1;i<nums.size();i++)
+       {
+        if(nums[i]==nums[m])
+        c++;
+        else
+        c--;
+        if(c==0)
+        m=i+1;
+       } 
+       return nums[m];
+    }
+};
+
+//Method 2
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+       int c=0, m=0;
+       for(int num : nums)
+       {
+        if(c==0)
+        {
+            m=num;
+            c=1;
+        }
+        else if(m==num)
+        c++;
+        else
+        c--;
+       } 
+       return m;
+    }
+};
+time complexity = O(n)
+Space : O(1)

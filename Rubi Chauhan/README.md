@@ -27,4 +27,5 @@ Experienced in Software Analysis, server-side Development using JavaScript, Node
 <a href="https://twitter.com/rubichauhan_" target="blank"><img align="center" src="https://github.com/Rubi-chauhan/github-profile-readme-generator/blob/master/src/social/icons/github.svg" alt="rubichauhan_twitter" height="30" width="40" /></a>
 <a href="https://twitter.com/rubichauhan_" target="blank"><img align="center" src="https://github.com/Rubi-chauhan/github-profile-readme-generator/blob/master/src/social/icons/twitter.svg" alt="rubichauhan_twitter" height="30" width="40" /></a>
 <a href="https://instagram.com/rubichauhan" target="blank"><img align="center" src="https://github.com/Rubi-chauhan/github-profile-readme-generator/blob/master/src/social/icons/instagram.svg" alt="rubichauhan_instagram" height="30" width="40" /></a>
+<a href="https://leetcode.com/u/Rubi-chauhan" target="blank"><img align="center" src="https://github.com/Rubi-chauhan/github-profile-readme-generator/blob/master/src/social/icons/leetcodeicon.png" alt="rubichauhan_instagram" height="30" width="40" /></a>
 </p>

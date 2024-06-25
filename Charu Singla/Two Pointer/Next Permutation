@@ -1,0 +1,45 @@
+class Solution {
+    
+    void reverse (vector<int>& nums, int start, int end) {
+
+        while (start < end ) {
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            ++ start;
+            -- end;
+        }
+    }
+
+    void swap ( vector<int>& nums, int index1, int index2) {
+        int temp = nums[index1];
+        nums[index1] = nums[index2];
+        nums[index2] = temp;
+    }
+
+    public: 
+        void nextPermutation(vector<int>& nums) {
+         int i = nums.size() - 2;
+
+         while (i >= 0 && nums[i] >= nums[i+1]) {
+            i --;
+         }
+
+         if (i == -1) {
+            reverse(nums, 0, nums.size() - 1);
+         }
+         else {
+            int j = nums.size() - 1;
+
+            while (j > i && nums[j] <= nums[i]) {
+                j --;
+            }
+
+            swap(nums, i, j);
+            reverse(nums, i+1, nums.size()-1);
+         }
+    }
+};
+
+// T.C. = O(n)
+// S.C. = O(1)
